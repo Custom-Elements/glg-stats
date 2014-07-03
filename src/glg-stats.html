@@ -10,10 +10,12 @@
     url="https://query.glgroup.com/rm/getRmRecentGtcRate.mustache?personId=593205">
   </core-ajax>
   <glg-current-user on-user="{{onuser}}">
+  </glg-current-user>
+  <section id="display">
     <link rel="stylesheet" type="text/css" href="./glg-stats.less">
     <ui-sparkline data="{{gtc_rates}}"></ui-sparkline>
     <label>GTC'd Rates ${{most_recent_gtc_rate}}</label>
-  </glg-current-user>
+  </section>
 </template>
 <script src="./glg-stats.litcoffee"></script>
 </polymer-element>
