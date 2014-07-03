@@ -1,10 +1,18 @@
 <link rel="import" href="../node_modules/ui-sparkline/src/ui-sparkline.html">
-<polymer-element name="glg-stats" attributes="">
+<link rel="import" href="../lib/core-ajax.html">
+<polymer-element name="glg-stats" attributes="currentuser gtc_rates most_recent_gtc_rate">
 <template>
-  <glg-current-user currentUser="{{currentUser}}">
+  <core-ajax
+    auto
+    handleAs="json"
+    on-core-response="{{onquery}}"
+    withCredentials
+    url="https://query.glgroup.com/rm/getRmRecentGtcRate.mustache?personId=593205">
+  </core-ajax>
+  <glg-current-user on-user="{{onuser}}">
     <link rel="stylesheet" type="text/css" href="./glg-stats.less">
-    <ui-sparkline data="1 2 3 4 5 4 4 3 3 10 10 8 7 5 3 3"></ui-sparkline>
-    <label>GTC'd Rates</label>
+    <ui-sparkline data="{{gtc_rates}}"></ui-sparkline>
+    <label>GTC'd Rates ${{most_recent_gtc_rate}}</label>
   </glg-current-user>
 </template>
 <script src="./glg-stats.litcoffee"></script>
