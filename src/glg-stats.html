@@ -1,0 +1,11 @@
+<link rel="import" href="../node_modules/ui-sparkline/src/ui-sparkline.html">
+<polymer-element name="glg-stats" attributes="">
+<template>
+  <glg-current-user currentUser="{{currentUser}}">
+    <link rel="stylesheet" type="text/css" href="./glg-stats.less">
+    <ui-sparkline data="1 2 3 4 5 4 4 3 3 10 10 8 7 5 3 3"></ui-sparkline>
+    <label>GTC'd Rates</label>
+  </glg-current-user>
+</template>
+<script src="./glg-stats.litcoffee"></script>
+</polymer-element>
