@@ -11,13 +11,11 @@ Pull in statistics for the current user and display them with fun sparklines.
 
       currentuserChanged: ->
         console.log 'hi', @currentuser
+        @$.getstats.go()
 
 ##Methods
 
 ##Event Handlers
-
-      onuser: (evt, detail) ->
-        @currentuser = detail
 
       onquery: (evt, detail) ->
         console.log 'goop', detail
@@ -39,7 +37,7 @@ Pull in statistics for the current user and display them with fun sparklines.
                 , 0
           .compact()
           .value()
-        @most_recent_gtc_rate = Math.floor _.last @gtc_rates
+        @most_recent_gtc_rate = Math.floor(_.last @gtc_rates)
 
 ##Polymer Lifecycle
 

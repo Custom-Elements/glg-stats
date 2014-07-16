@@ -3,13 +3,13 @@
 <polymer-element name="glg-stats" attributes="currentuser gtc_rates most_recent_gtc_rate">
 <template>
   <core-ajax
-    auto
+    id="getstats"
     handleAs="json"
     on-core-response="{{onquery}}"
     withCredentials
-    url="https://query.glgroup.com/rm/getRmRecentGtcRate.mustache?personId=593205">
+    url="https://query.glgroup.com/rm/getRmRecentGtcRate.mustache?personId={{currentuser.personId}}">
   </core-ajax>
-  <glg-current-user on-user="{{onuser}}">
+  <glg-current-user currentuser="{{currentuser}}"
   </glg-current-user>
   <section id="display">
     <link rel="stylesheet" type="text/css" href="./glg-stats.less">
