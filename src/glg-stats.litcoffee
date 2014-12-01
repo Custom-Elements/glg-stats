@@ -1,7 +1,7 @@
 #glg-stats
 Pull in statistics for the current user and display them with fun sparklines.
 
-    _ = require 'lodash'
+    _ = require 'lodash-node'
 
     Polymer 'glg-stats',
 
