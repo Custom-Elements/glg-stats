@@ -1,4 +1,5 @@
 <link rel="import" href="../node_modules/ui-sparkline/src/ui-sparkline.html">
+<link rel="import" href="../node_modules/glg-current-user/src/glg-current-user.html">
 <link rel="import" href="../lib/core-ajax.html">
 <polymer-element name="glg-stats" attributes="currentuser gtc_rates most_recent_gtc_rate">
 <template>
@@ -9,8 +10,7 @@
     withCredentials
     url="https://query.glgroup.com/rm/getRmRecentGtcRate.mustache?personId={{currentuser.personId}}">
   </core-ajax>
-  <glg-current-user currentuser="{{currentuser}}"
-  </glg-current-user>
+  <glg-current-user currentuser="{{currentuser}}"> </glg-current-user>
   <section id="display">
     <link rel="stylesheet" type="text/css" href="./glg-stats.less">
     <ui-sparkline data="{{gtc_rates}}"></ui-sparkline>
