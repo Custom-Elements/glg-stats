@@ -8,7 +8,7 @@
     handleAs="json"
     on-core-response="{{onquery}}"
     withCredentials
-    url="https://query.glgroup.com/rm/getRmRecentGtcRate.mustache?personId={{currentuser.personId}}">
+    url="https://services.glgresearch.com/epiquery/rm/getRmRecentGtcRate.mustache?personId={{currentuser.personId}}">
   </core-ajax>
   <glg-current-user currentuser="{{currentuser}}"> </glg-current-user>
   <section id="display">
